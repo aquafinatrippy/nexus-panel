@@ -20,7 +20,9 @@ export const PostsTable = ({ limit, title }: PostsTableProps) => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
-  const filteredPosts: Post[] = limit ? sortedPosts.slice(0, limit) : sortedPosts;
+  const filteredPosts: Post[] = limit
+    ? sortedPosts.slice(0, limit)
+    : sortedPosts;
 
   return (
     <div className="mt-10">
@@ -47,7 +49,7 @@ export const PostsTable = ({ limit, title }: PostsTableProps) => {
               </TableCell>
               <TableCell>
                 <Link
-                  href={`/posts/${post.id}`}
+                  href={`/posts/edit/${post.id}`}
                   className="text-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded text-xs"
                 >
                   View
